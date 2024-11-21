@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperTech Mart | E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abel&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1 class="h1">HyperTech Mart</h1>
+      <div class="cart">
+        <div class="btn-group">
+          <button id="cart-btn"><i class="fa-solid fa-cart-shopping"></i> : <span id="cart-count">0</span></button>
+        </div>
+      </div>
+    </div>
+    <!-- <a href="admin.html" title="Contact Admin"><i class="fa-solid fa-users"></i></a> -->
+  </header>
+
+
+  <main>
+    <h2>Produk Elektronik Terbaik</h2>
+    <div class="product-container">
+      <div class="product">
+        <img src="image/2.png" alt="Laptop Gaming">
+        <h3>ROG Strix Laptop Gaming</h3>
+        <p>Rp 15,000,000</p>
+        <button class="add-to-cart" data-name="Laptop Gaming" data-price="15000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/1.png" alt="Smartphone">
+        <h3>Iphone 16 Pro Max</h3>
+        <p>Rp 19,500,000</p>
+        <button class="add-to-cart" data-name="Smartphone" data-price="7000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/3.png" alt="Headphone">
+        <h3>Sony Wh1000Xm4 Headphone</h3>
+        <p>Rp 1,500,000</p>
+        <button class="add-to-cart" data-name="Headphone" data-price="1500000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/4.png" alt="Smartwatch">
+        <h3>Aolon Curve Smartwatch</h3>
+        <p>Rp 2,000,000</p>
+        <button class="add-to-cart" data-name="Smartwatch" data-price="2000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/5.png" alt="Tablet">
+        <h3>JBL Bluetooth Speaker</h3>
+        <p>Rp 500,000</p>
+        <button class="add-to-cart" data-name="Tablet" data-price="5000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/6.png" alt="Kamera Digital">
+        <h3>Nemesis Keyboard Gaming</h3>
+        <p>Rp 900,000</p>
+        <button class="add-to-cart" data-name="Kamera Digital" data-price="8000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/7.png" alt="Speaker Bluetooth">
+        <h3>Intel I9 PC Gaming</h3>
+        <p>Rp 20,000,000</p>
+        <button class="add-to-cart" data-name="Speaker Bluetooth" data-price="1000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/8.png" alt="Drone">
+        <h3>Rexus Aviator Mouse</h3>
+        <p>Rp 220,000</p>
+        <button class="add-to-cart" data-name="Drone" data-price="12000000">Masukkan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/9.png" alt="Monitor">
+        <h3>MSI G24i 24" Monitor </h3>
+        <p>Rp 3,500,000</p>
+        <button class="add-to-cart" data-name="Monitor" data-price="3500000">Masukan ke Keranjang</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span id="close-modal" class="close">&times;</span>
+      <h2>Keranjang Belanja</h2>
+      <ul id="cart-items"></ul>
+      <p>Total Barang: <span id="total-items">0</span></p>
+      <button id="clear-cart" class="clear-cart">Batalkan Semua Pesanan</button>
+    </div>
+  </div>
+
+  <a href="admin.html" id="floating-link" title="Contact Admin" class="floating-link">
+    <i class="fa-solid fa-users"></i> <!-- Ikon bisa diganti sesuai kebutuhan -->
+  </a>
+
+  <footer>
+    <p>&copy; 2024 E-Commerce Elektronik. All Rights Reserved.</p>
+  </footer>
+
+  <!-- <script src="script.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
