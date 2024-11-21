@@ -122,19 +122,23 @@ p {
 
 
 /* Floating Cart Button */
+/* Floating Cart Link */
 .cart-btn {
-  position: fixed; /* Tetapkan posisi tetap */
-  bottom: 30px; /* Jarak dari bawah layar */
-  right: 30px; /* Jarak dari kanan layar */
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
   background-color: #273443; /* Warna latar belakang */
   color: white; /* Warna teks */
-  border: none;
-  border-radius: 50%; /* Bentuk bulat */
-  padding: 15px 25px;
-  cursor: pointer;
-  font-size: 1.2rem; /* Ukuran teks */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  text-decoration: none; /* Hilangkan garis bawah */
+  border: #ffffff solid 1px;
+  border-radius: 50px; /* Bentuk bulat */
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
   transition: all 0.3s ease; /* Animasi */
+}
+
+.cart-btn i {
+  margin-right: 8px;
 }
 
 .cart-btn:hover {
@@ -142,15 +146,10 @@ p {
   transform: scale(1.1); /* Efek zoom saat hover */
 }
 
-
-.cart-btn button {
-  background: none;
-  border: none;
-  border-radius: 50px;
-  color: white;
-  font-size: 1.2rem;
-  cursor: pointer;
+.cart-btn:active {
+  background-color: #003d6a; /* Warna saat tombol ditekan */
 }
+
 
 /* Modal Styles */
 .modal {
@@ -211,7 +210,7 @@ p {
 /* Floating Link */
 .floating-link {
   position: fixed; /* Posisi tetap */
-  bottom: 30px; /* Jarak dari bawah layar */
+  bottom: 60px; /* Jarak dari bawah layar */
   right: 30px; /* Jarak dari kanan layar */
   background-color: #273443; /* Warna latar belakang */
   color: white; /* Warna teks */
@@ -236,3 +235,116 @@ p {
 }
 
 /* Tambahkan animasi dan gaya jika diperlukan */
+
+body {
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Menambahkan pengaturan untuk responsif */
+@media (max-width: 768px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr; /* Mengubah jadi 2 kolom pada layar kecil */
+    gap: 10px;
+    max-width: 100%;
+  }
+
+  .product {
+    padding: 15px;
+  }
+
+  .product h3 {
+    font-size: 1rem; /* Mengurangi ukuran font */
+  }
+
+  .product p {
+    font-size: 0.9rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  /* Kart total dan cart-btn pada mobile */
+  .cart-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+
+  .cart-btn button {
+    font-size: 1rem;
+  }
+
+  .floating-link {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .clear-cart {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .remove-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* Ketika di bawah 480px */
+@media (max-width: 480px) {
+  .product-container {
+    grid-template-columns: 1fr; /* Menjadi satu kolom di perangkat kecil */
+    gap: 10px;
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product p {
+    font-size: 0.9rem;
+  }
+
+  .header-content {
+    align-items: center;
+  }
+
+  .h1 {
+    font-size: 1.2rem;
+  }
+
+  .cart-btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .floating-link {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .clear-cart, .remove-item {
+    padding: 0.3rem 0.6rem;
+  }
+}

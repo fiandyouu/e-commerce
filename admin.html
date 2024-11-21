@@ -21,6 +21,7 @@
       align-items: center;
       background-color: #273443;
       padding: 10px 20px;
+      
     }
 
     .navbar .logo {
@@ -138,6 +139,86 @@
 
     a:hover {
       background-color: #0056b3;
+    }
+
+    /* Media Queries for mobile responsiveness */
+    @media (max-width: 768px) {
+      .navbar .nav-links {
+        display: none; /* Hide nav links on small screens */
+      }
+
+      .container {
+        grid-template-columns: 1fr; /* Stack forms vertically */
+        gap: 20px;
+      }
+
+      .form-container {
+        margin: 0; /* Remove extra margin on small screens */
+        max-width: 100%;
+      }
+
+      .header img {
+        width: 80px; /* Smaller image size on mobile */
+        height: 80px;
+      }
+
+      .header .admin-name {
+        font-size: 1.2rem; /* Adjust text size */
+      }
+
+      .header .admin-role {
+        font-size: 0.9rem; /* Adjust text size */
+      }
+
+      .navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        padding: 15px 20px;
+      }
+
+      .navbar .nav-links {
+        display: block;
+        flex-direction:row;
+        gap: 10px;
+        align-items: center;
+        margin-top: 10px;
+        margin-left: 55px;
+        margin-right: auto;
+        
+      }
+
+      .navbar .nav-links a {
+        font-size: 75%; /* Larger font size for mobile */
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar .logo {
+        font-size: 1.5rem; /* Smaller logo font on very small screens */
+      }
+
+      .form-container {
+        padding: 15px; /* Reduce padding */
+      }
+
+      .header .admin-name {
+        font-size: 1.1rem; /* Further reduce text size */
+      }
+
+      .header .admin-role {
+        font-size: 0.8rem; /* Further reduce text size */
+      }
+
+      label {
+        font-size: 0.9rem; /* Smaller label font */
+      }
+
+      input, textarea {
+        font-size: 0.9rem; /* Smaller input/textarea font */
+      }
+
+      a {
+        font-size: 0.9rem; /* Smaller button font */
+      }
     }
   </style>
 </head>
