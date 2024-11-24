@@ -22,16 +22,38 @@
   <header>
     <div class="header-content">
       <h1 class="h1">HyperTech Mart</h1>
-      <div class="cart">
-        <div class="btn-group">
-          <a href="#" id="cart-btn" class="cart-btn">
-            <i class="fa-solid fa-cart-shopping"></i> Keranjang: <span style="margin-left: 10px;" id="cart-count">0</span>
-          </a>
-          
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 5px;">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <form class="d-flex ms-auto" role="search">
+            <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search"
+              style="margin-left: -145%;width: 140%;">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="customer_support.html">Customer Support</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin_center.html">Admin Center</a>
+            </li>
+          </ul>
+          <div class="cart">
+            <div class="btn-group">
+              <a href="#" id="cart-btn" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i><span style="margin-left: 1px;" id="cart-count">0</span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- <a href="admin.html" title="Contact Admin"><i class="fa-solid fa-users"></i></a> -->
+    </nav>
   </header>
 
 
@@ -105,11 +127,6 @@
       <button id="clear-cart" class="clear-cart">Batalkan Semua Pesanan</button>
     </div>
   </div>
-
-  <a href="admin.html" id="floating-link" title="Contact Admin" class="floating-link">
-    <i class="fa-solid fa-users"></i> <!-- Ikon bisa diganti sesuai kebutuhan -->
-  </a>
-
   <footer>
     <p>&copy; 2024 E-Commerce Elektronik. All Rights Reserved.</p>
   </footer>

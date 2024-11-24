@@ -17,9 +17,22 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: #273443;
   color: white;
   padding: 1rem 1rem;
+  border-radius: 5px;
+}
+
+
+
+.header-content h1 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  padding: 10px;
 }
 
 .nova-round-regular {
@@ -58,6 +71,7 @@ main h2 {
 p {
   text-align: center;
 }
+
 
 
 .product-container {
@@ -119,19 +133,16 @@ p {
   background-color: #0056b3;
 }
 
-
-
 /* Floating Cart Button */
 /* Floating Cart Link */
 .cart-btn {
   display: inline-flex;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #273443; /* Warna latar belakang */
+  padding: 5px 10px;
   color: white; /* Warna teks */
   text-decoration: none; /* Hilangkan garis bawah */
   border: #ffffff solid 1px;
-  border-radius: 50px; /* Bentuk bulat */
+  border-radius: 30px; /* Bentuk bulat */
   font-size: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
   transition: all 0.3s ease; /* Animasi */
@@ -142,12 +153,12 @@ p {
 }
 
 .cart-btn:hover {
-  background-color: #0056b3; /* Warna saat hover */
-  transform: scale(1.1); /* Efek zoom saat hover */
+  background-color: #ffffff75; /* Warna saat hover */
+  transform: scale(1); /* Efek zoom saat hover */
 }
 
 .cart-btn:active {
-  background-color: #003d6a; /* Warna saat tombol ditekan */
+  background-color: #ffffffac; /* Warna saat tombol ditekan */
 }
 
 
@@ -197,7 +208,7 @@ p {
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3px 0.5rem;
   font-size: 0.8rem;
   cursor: pointer;
   margin-left: 10px;
@@ -233,6 +244,8 @@ p {
 .floating-link i {
   font-size: 1.0rem; /* Ukuran ikon */
 }
+
+
 
 /* Tambahkan animasi dan gaya jika diperlukan */
 
@@ -347,4 +360,29 @@ body {
   .clear-cart, .remove-item {
     padding: 0.3rem 0.6rem;
   }
+
+  /* Responsif */
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+}
 }

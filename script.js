@@ -2,13 +2,12 @@ let cart = [];
 const cartCount = document.getElementById("cart-count");
 const cartItems = document.getElementById("cart-items");
 const totalItems = document.getElementById("total-items");
-const totalPrice = document.getElementById("total-price");
 const cartModal = document.getElementById("cart-modal");
 const closeModal = document.getElementById("close-modal");
 const cartBtn = document.getElementById("cart-btn");
 const clearCartBtn = document.getElementById("clear-cart");
 
-// Add items to the cart
+// Tambahkan item ke keranjang
 document.querySelectorAll(".add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
     const name = button.getAttribute("data-name");
@@ -21,60 +20,68 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
       cart.push({ name, price, quantity: 1 });
     }
 
-    updateCart(); // Update cart display after item is added
+    updateCart(); // Perbarui tampilan keranjang
   });
 });
 
-// Open cart modal when the cart button is clicked
+// Buka modal keranjang
 cartBtn.addEventListener("click", () => {
   cartModal.style.display = "block";
-  cartModal.style.transform = "translateX(0)"; // Slide in the modal
+  cartModal.style.transform = "translateX(0)"; // Animasi slide-in
 });
 
-// Close cart modal when the close button is clicked
+// Tutup modal keranjang
 closeModal.addEventListener("click", () => {
-  cartModal.style.transform = "translateX(100%)"; // Slide out the modal
+  cartModal.style.transform = "translateX(100%)"; // Animasi slide-out
   setTimeout(() => {
     cartModal.style.display = "none";
-  }, 300); // Delay hiding the modal to allow the slide-out effect
+  }, 300); // Beri waktu untuk animasi selesai
 });
 
-// Remove item from cart by index
+// Hapus item dari keranjang
 function removeItemFromCart(index) {
-  cart.splice(index, 1); // Remove item from cart array
-  updateCart(); // Update cart display after item is removed
+  cart[index].quantity -= 1; // Kurangi jumlah barang
+  if (cart[index].quantity <= 0) {
+    cart.splice(index, 1); // Hapus item jika jumlahnya nol
+  }
+  updateCart(); // Perbarui tampilan keranjang
 }
 
-// Clear all items from cart
+// Kosongkan semua item di keranjang
 clearCartBtn.addEventListener("click", () => {
-  cart = []; // Clear the cart array
-  updateCart(); // Update cart display
+  cart = []; // Kosongkan array keranjang
+  updateCart(); // Perbarui tampilan keranjang
 });
 
-// Update cart display
+// Perbarui tampilan keranjang
 function updateCart() {
-  cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Update cart count
-  totalPrice.textContent = cart.reduce((sum, item) => sum + item.price * item.quantity, 0); // Update total price
+  // Hitung jumlah total barang dan harga
+  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  cartItems.innerHTML = ""; // Clear current cart items
+  // Perbarui elemen tampilan
+  cartCount.textContent = totalQuantity;
+  totalItems.textContent = totalQuantity;
 
-  // Loop through the cart and display each item
+  cartItems.innerHTML = ""; // Kosongkan daftar keranjang
+
+  // Tambahkan setiap item ke dalam daftar keranjang
   cart.forEach((item, index) => {
     const li = document.createElement("li");
     li.innerHTML = `
-      ${item.name} (x${item.quantity}) - Rp ${item.price * item.quantity}
-      <button class="remove-item" data-index="${index}">Batalkan</button>
+      ${item.name} (x${item.quantity}) - Rp ${(item.price * item.quantity).toLocaleString('id-ID')}
+      <button class="remove-item" data-index="${index}">&times;</button>
     `;
-    cartItems.appendChild(li); // Add item to cart list
+    cartItems.appendChild(li);
 
-    // Add event listener for "Batalkan" button
-    document.querySelectorAll(".remove-item").forEach((button) => {
-      button.addEventListener("click", () => {
-        const index = parseInt(button.getAttribute("data-index"));
-        removeItemFromCart(index); // Remove item from cart
-      });
+    // Tambahkan event listener ke tombol hapus
+    li.querySelector(".remove-item").addEventListener("click", () => {
+      removeItemFromCart(index);
     });
   });
 
-  totalItems.textContent = cart.reduce((sum, item) => sum + item.quantity, 0); // Update total quantity
+  // Tambahkan elemen total harga di bagian bawah
+  const totalPriceElement = document.createElement("p");
+  totalPriceElement.innerHTML = `Total Harga: <strong>Rp ${totalPrice.toLocaleString('id-ID')}</strong>`;
+  cartItems.appendChild(totalPriceElement);
 }
