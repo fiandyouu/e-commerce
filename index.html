@@ -16,185 +16,6 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Abel&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap"
     rel="stylesheet">
-  <style>
-    /* Navbar Styling */
-    .navbar-nav {
-      margin-left: 50%;
-    }
-
-    .navbar .navbar-toggler {
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .navbar-brand {
-      font-size: 1.5rem;
-      font-weight: bold;
-      display: none;
-      /* Hide the "Happy Shopping" text */
-    }
-
-    /* Style for the dropdown menu */
-    .navbar-nav .nav-item .dropdown-menu {
-      display: none;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    /* Show the dropdown on hover */
-    .navbar-nav .nav-item:hover .dropdown-menu {
-      display: block;
-      opacity: 1;
-      visibility: visible;
-    }
-
-    /* Style for dropdown items */
-    .navbar-nav .nav-item .dropdown-item {
-      color: rgb(0, 0, 0) !important;
-      padding: 10px 20px;
-    }
-
-    /* Change color of dropdown items on hover */
-    .navbar-nav .nav-item .dropdown-item:hover {
-      color: #ffc107 !important;
-      background-color: rgba(255, 255, 255, 0.1);
-      /* Optional: Adds a background on hover */
-    }
-
-
-    .navbar-nav .nav-link {
-      color: white !important;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #ffc107 !important;
-    }
-
-    .cart-btn {
-      font-size: 20px;
-      color: white;
-      display: flex;
-      align-items: center;
-    }
-
-    #cart-count {
-      margin-left: 5px;
-      background-color: #ffc107;
-      border-radius: 50%;
-      padding: 2px 8px;
-      font-size: 14px;
-    }
-
-    footer {
-      background-color: #343a40;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-
-    /* Mobile navbar adjustments */
-    @media (max-width: 768px) {
-      .navbar-nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    /* Cart Modal Styling */
-    .modal-content {
-      padding: 20px;
-      max-width: 500px;
-      margin: auto;
-    }
-
-    .modal-header,
-    .modal-footer {
-      border: none;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin: 10px 0;
-    }
-
-    .cart-item button {
-      background: #dc3545;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-
-    .cart-item button:hover {
-      background-color: #c82333;
-    }
-
-    .clear-cart {
-      background-color: #007bff;
-      color: white;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .clear-cart:hover {
-      background-color: #0056b3;
-    }
-
-    /* Adjust the layout of the navbar */
-    .navbar .container-fluid {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .search-bar-container {
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-    }
-
-    .search-bar-container form {
-      width: 100%;
-    }
-
-    /* Move the cart icon to the right */
-    .navbar .cart {
-      margin-left: auto;
-    }
-
-    footer p {
-      font-size: 0.8rem;
-    }
-
-    /* Product container adjustments for grid layout */
-    .product-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      /* 4 items per row by default */
-      gap: 20px;
-      /* Adds space between items */
-    }
-
-    @media (max-width: 768px) {
-
-      /* On mobile, display 2 items per row */
-      .product-container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 2 items per row on mobile */
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      /* For very small screens, you can display 1 item per row if needed */
-      .product-container {
-        grid-template-columns: 1fr;
-        /* 1 item per row on smaller devices */
-      }
-    }
-  </style>
 </head>
 
 <body>
@@ -204,62 +25,62 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <!-- Remove Happy Shopping label -->
-        <a class="navbar-brand" href="#"></a>
-
-        <!-- Navbar Toggler -->
+        <!-- Navbar Toggler Button -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navbar Links -->
-        <div class="d-flex ms-auto search-bar-container">
-          <form class="d-flex me-3" role="search">
-            <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                data-bs-toggle="dropdown" aria-expanded="false">
-                Categories
+        <!-- Navbar Links and Search Form -->
+        <div class="d-flex flex-column w-100">
+          <!-- Search bar moved to top -->
+          <div class="search-bar-container">
+            <form class="d-flex w-100" role="search">
+              <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+
+          <!-- Navbar Menu Items -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Categories
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                  <li><a class="dropdown-item" href="#">Laptops</a></li>
+                  <li><a class="dropdown-item" href="#">Smartphones</a></li>
+                  <li><a class="dropdown-item" href="#">Accessories</a></li>
+                  <li><a class="dropdown-item" href="#">Gaming</a></li>
+                  <li><a class="dropdown-item" href="#">Others</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="customer_support.html">Customer Support</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="admin_center.html">Admin Center</a>
+              </li>
+            </ul>
+            <!-- Cart icon moved to right -->
+            <div class="cart">
+              <a href="#" id="cart-btn" class="cart-btn" data-bs-toggle="modal" data-bs-target="#cart-modal">
+                <i class="fa-solid fa-cart-shopping">:</i><span id="cart-count">0</span>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                <li><a class="dropdown-item" href="#">Laptops</a></li>
-                <li><a class="dropdown-item" href="#">Smartphones</a></li>
-                <li><a class="dropdown-item" href="#">Accessories</a></li>
-                <li><a class="dropdown-item" href="#">Gaming</a></li>
-                <li><a class="dropdown-item" href="#">Others</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="customer_support.html">Customer Support</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="admin_center.html">Admin Center</a>
-            </li>
-          </ul>
-          <div class="cart">
-            <a href="#" id="cart-btn" class="cart-btn" data-bs-toggle="modal" data-bs-target="#cart-modal">
-              <i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span>
-            </a>
+            </div>
           </div>
         </div>
-
-        <!-- Search Bar and Cart -->
-
       </div>
     </nav>
   </header>
 
   <main>
-    <h2>Produk Elektronik Terbaik</h2>
+    <h2>Produk Terbaik</h2>
     <div class="product-container">
       <div class="product">
         <img src="image/2.png" alt="ROG Strix Laptop Gaming">
@@ -276,9 +97,9 @@
       </div>
       <div class="product">
         <img src="image/3.png" alt="Sony Wh1000Xm4 Headphone">
-        <h3>Sony Wh10X m4 Headphone</h3>
+        <h3>Sony Wh1000X m4 Headphone</h3>
         <p>Rp 1,599,000</p>
-        <button class="add-to-cart" data-name="Sony Wh10X m4 Headphone" data-price="1599000">Masukkan ke
+        <button class="add-to-cart" data-name="Sony Wh1000X m4 Headphone" data-price="1599000">Masukkan ke
           Keranjang</button>
       </div>
       <div class="product">

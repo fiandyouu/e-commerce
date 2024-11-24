@@ -10,12 +10,188 @@ body {
   color: #333;
 }
 
-.h1 {
-  font-family: "Bungee Shade", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/* Navbar Styling */
+.navbar-nav {
+  margin-left: auto;
 }
 
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Menu Styling */
+.navbar-nav .nav-item .dropdown-menu {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.cart-btn {
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  align-items: center;
+}
+
+#cart-count {
+  margin-left: 1px;
+  border-radius: 50%;
+  padding: 2px 0px;
+  font-size: 14px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .cart-btn {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+
+  .navbar .navbar-collapse {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product {
+    padding: 15px;
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product p {
+    font-size: 0.9rem;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+
+  .cart-btn {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+  }
+
+  .cart-btn button {
+    font-size: 1rem;
+  }
+
+  .floating-link {
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .clear-cart {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .remove-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .product h3 {
+    font-size: 1rem;
+  }
+
+  .product p {
+    font-size: 0.9rem;
+  }
+
+  .header-content {
+    align-items: center;
+  }
+
+  .h1 {
+    font-size: 1.2rem;
+  }
+
+  .cart-btn {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .floating-link {
+    padding: 10px;
+    font-size: 1.3rem;
+  }
+
+  .modal {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .clear-cart, .remove-item {
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Header Styling */
 header {
   position: sticky;
   top: 0;
@@ -25,8 +201,6 @@ header {
   padding: 1rem 1rem;
   border-radius: 5px;
 }
-
-
 
 .header-content h1 {
   font-family: 'Bungee Shade', sans-serif;
@@ -54,40 +228,17 @@ header {
   align-items: center;
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-
-main {
-  display: flex;
-  justify-content: center;
-  /* Center main content */
-  align-items: center;
-  flex-direction: column;
-  padding: 2rem 0;
-}
-
-main h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.6rem;
-}
-
-p {
+h2 {
+  height: 90px;
   text-align: center;
 }
 
-
-
+/* Product Container Layout */
 .product-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 products per row */
   gap: 20px;
   justify-content: center;
-  /* Center grid */
   align-items: center;
   margin: 0 auto;
   max-width: 1200px;
@@ -105,7 +256,6 @@ p {
 
 .product:hover {
   transform: translateY(-10px);
-  /* Hover effect to lift the product */
 }
 
 .product img {
@@ -140,37 +290,7 @@ p {
   background-color: #0056b3;
 }
 
-/* Floating Cart Button */
-/* Floating Cart Link */
-.cart-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 10px;
-  color: white; /* Warna teks */
-  text-decoration: none; /* Hilangkan garis bawah */
-  border: #ffffff solid 1px;
-  border-radius: 30px; /* Bentuk bulat */
-  font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
-  transition: all 0.3s ease; /* Animasi */
-}
-
-.cart-btn i {
-  margin-right: 8px;
-}
-
-.cart-btn:hover {
-  background-color: #ffffff75; /* Warna saat hover */
-  transform: scale(1); /* Efek zoom saat hover */
-}
-
-.cart-btn:active {
-  background-color: #ffffffac; /* Warna saat tombol ditekan */
-}
-
-
-/* Modal Styles */
-/* Styling for cart modal */
+/* Cart Modal Styling */
 .modal-body {
   padding: 20px;
 }
@@ -238,141 +358,64 @@ button.btn-close {
   font-size: 1.5rem;
 }
 
-
-body {
-  font-family: "Abel", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f9fa;
-  color: #333;
+/* Cart Button Styling */
+.cart-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-/* Menambahkan pengaturan untuk responsif */
-@media (max-width: 768px) {
-  .product-container {
-    grid-template-columns: 1fr 1fr; /* Mengubah jadi 2 kolom pada layar kecil */
-    gap: 10px;
-    max-width: 100%;
-  }
-
-  .product {
-    padding: 15px;
-  }
-
-  .product h3 {
-    font-size: 1rem; /* Mengurangi ukuran font */
-  }
-
-  .product p {
-    font-size: 0.9rem;
-  }
-
-  .header-content {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .h1 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-  }
-
-  /* Kart total dan cart-btn pada mobile */
-  .cart-btn {
-    padding: 10px 20px;
-    font-size: 1.1rem;
-  }
-
-  .cart-btn button {
-    font-size: 1rem;
-  }
-
-  .floating-link {
-    font-size: 1.2rem;
-    padding: 12px;
-  }
-
-  .modal {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .clear-cart {
-    padding: 0.4rem 0.8rem;
-  }
-
-  .remove-item {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.7rem;
-  }
+.cart-btn i {
+  margin-right: 8px;
 }
 
-/* Ketika di bawah 480px */
-@media (max-width: 480px) {
-  .product-container {
-    grid-template-columns: 1fr; /* Menjadi satu kolom di perangkat kecil */
-    gap: 10px;
-  }
-
-  .product h3 {
-    font-size: 1rem;
-  }
-
-  .product p {
-    font-size: 0.9rem;
-  }
-
-  .header-content {
-    align-items: center;
-  }
-
-  .h1 {
-    font-size: 1.2rem;
-  }
-
-  .cart-btn {
-    font-size: 1rem;
-    padding: 10px 15px;
-  }
-
-  .floating-link {
-    padding: 10px;
-    font-size: 1.3rem;
-  }
-
-  .modal {
-    width: 100%;
-    padding: 15px;
-  }
-
-  .clear-cart, .remove-item {
-    padding: 0.3rem 0.6rem;
-  }
-
-  /* Responsif */
-@media (max-width: 768px) {
-  .header-content h1 {
-    font-size: 1.8rem;
-  }
-
-  .navbar-nav {
-    flex-direction: column;
-  }
-
-  .nav-link {
-    text-align: center;
-  }
+.cart-btn:hover {
+  background-color: #ffffff75;
+  transform: scale(1);
 }
 
-@media (max-width: 480px) {
-  .header-content h1 {
-    font-size: 1.5rem;
-  }
-
-  .nav-link {
-    font-size: 12px;
-  }
+.cart-btn:active {
+  background-color: #ffffffac;
 }
+
+/* About and Dashboard Card Styling */
+.about-card, .dashboard-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-card p, .dashboard-card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Floating Link Button */
+.floating-link {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffc107;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.floating-link:hover {
+  background-color: #ff9c00;
+}
+
+.floating-link:active {
+  transform: scale(0.95);
 }
