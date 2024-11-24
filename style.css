@@ -198,8 +198,8 @@ header {
   z-index: 1000;
   background-color: #273443;
   color: white;
-  padding: 1rem 1rem;
-  border-radius: 5px;
+  padding: 1rem ;
+  border-radius: 0px 0px 5px 5px;
 }
 
 .header-content h1 {
@@ -295,9 +295,10 @@ h2 {
   padding: 20px;
 }
 
-#cart-items {
-  list-style-type: none;
-  padding: 0;
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #cart-items li {
@@ -320,16 +321,18 @@ h2 {
 }
 
 .remove-item {
-  background-color: #ff4d4d;
+  background-color: #ff4d4d00;
   border: none;
-  color: white;
+  color: rgba(255, 0, 0, 0.498);
   padding: 5px 10px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 1px;
+  margin-left: 10px; /* Add space between the item and the remove button */
 }
 
 .remove-item:hover {
-  background-color: #ff1a1a;
+  color: rgb(255, 0, 0);
+  background-color: #ffffff00;
 }
 
 .clear-cart {
@@ -367,7 +370,6 @@ button.btn-close {
   text-decoration: none;
   border: none;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -376,7 +378,6 @@ button.btn-close {
 }
 
 .cart-btn:hover {
-  background-color: #ffffff75;
   transform: scale(1);
 }
 
