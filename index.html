@@ -16,6 +16,67 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Abel&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap"
     rel="stylesheet">
+  <style>
+    /* Additional custom styles for mobile responsiveness */
+    @media (max-width: 768px) {
+      .product-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
+        gap: 1rem;
+      }
+
+      .product {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .product img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+      }
+
+      .navbar {
+        padding: 10px;
+      }
+
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-nav .nav-item {
+        padding: 0.5rem;
+      }
+
+      .search-bar {
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .cart-btn {
+        font-size: 20px;
+      }
+    }
+
+    /* Adjust the heading for small screens */
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .footer p {
+      text-align: center;
+      font-size: 0.75rem; /* Smaller font size */
+    }
+  </style>
 </head>
 
 <body>
@@ -25,14 +86,15 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 5px;">
       <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <form class="d-flex ms-auto" role="search">
-            <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search"
-              style="margin-left: -145%;width: 140%;">
+          <form class="d-flex ms-auto search-bar" role="search">
+            <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
             <button class="btn btn-outline-light" type="submit">Search</button>
           </form>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
@@ -55,7 +117,6 @@
       </div>
     </nav>
   </header>
-
 
   <main>
     <h2>Produk Elektronik Terbaik</h2>
@@ -127,6 +188,7 @@
       <button id="clear-cart" class="clear-cart">Batalkan Semua Pesanan</button>
     </div>
   </div>
+
   <footer>
     <p>&copy; 2024 E-Commerce Elektronik. All Rights Reserved.</p>
   </footer>
