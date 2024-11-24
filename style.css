@@ -29,8 +29,15 @@ header {
 
 
 .header-content h1 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Bungee Shade', sans-serif;
   text-align: center;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+.header-content-about h1 {
+  font-family: 'poppins', sans-serif;
+  text-align: left;
   font-size: 2rem;
   padding: 10px;
 }
@@ -163,91 +170,74 @@ p {
 
 
 /* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px;
-  height: 100%;
-  background-color: white;
-  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+/* Styling for cart modal */
+.modal-body {
   padding: 20px;
-  z-index: 1000;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
 }
 
-.modal-content {
-  text-align: center;
+#cart-items {
+  list-style-type: none;
+  padding: 0;
 }
 
-.modal .close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-.clear-cart {
-  background-color: #dc3545;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.clear-cart:hover {
-  background-color: #c82333;
-}
-
-.remove-item {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 0.3px 0.5rem;
-  font-size: 0.8rem;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.remove-item:hover {
-  background-color: #c82333;
-}
-
-/* Floating Link */
-.floating-link {
-  position: fixed; /* Posisi tetap */
-  bottom: 60px; /* Jarak dari bawah layar */
-  right: 30px; /* Jarak dari kanan layar */
-  background-color: #273443; /* Warna latar belakang */
-  color: white; /* Warna teks */
-  text-decoration: none; /* Hilangkan garis bawah */
-  border-radius: 50%; /* Bentuk lingkaran */
-  padding: 15px 15px; /* Ukuran padding */
-  font-size: 1.5rem; /* Ukuran ikon */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
-  transition: all 0.3s ease; /* Animasi */
+#cart-items li {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+#cart-items li:last-child {
+  border-bottom: none;
+}
+
+#cart-items .item-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   align-items: center;
 }
 
-.floating-link:hover {
-  background-color: #0056b3; /* Warna saat hover */
-  transform: scale(1.1); /* Efek zoom saat hover */
+.remove-item {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.floating-link i {
-  font-size: 1.0rem; /* Ukuran ikon */
+.remove-item:hover {
+  background-color: #ff1a1a;
 }
 
+.clear-cart {
+  width: 100%;
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+}
 
+.clear-cart:hover {
+  background-color: #e60000;
+}
 
-/* Tambahkan animasi dan gaya jika diperlukan */
+.modal-header {
+  background-color: #f8f9fa;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+button.btn-close {
+  background-color: transparent;
+  border: none;
+  font-size: 1.5rem;
+}
+
 
 body {
   font-family: "Abel", sans-serif;

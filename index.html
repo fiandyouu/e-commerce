@@ -17,84 +17,119 @@
     href="https://fonts.googleapis.com/css2?family=Abel&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap"
     rel="stylesheet">
   <style>
-    /* Custom styling for search bar and cart button */
-    @media (max-width: 768px) {
-      .navbar-nav {
-        flex-direction: column;
-      }
-
-      .search-bar {
-        width: 100%;
-        margin: 10px 0;
-      }
-
-      .navbar-toggler {
-        margin-right: 10px;
-      }
-
-      .cart {
-        margin-left: 15px;
-      }
-
-      .navbar-collapse {
-        margin-top: 10px;
-      }
-
-      .cart-btn {
-        font-size: 18px;
-        margin-left: 10px;
-      }
-
-      .navbar .search-bar, .navbar .cart-btn {
-        display: inline-block;
-      }
-
-      .cart {
-        margin-left: 20px;
-      }
+    /* Navbar Styling */
+    .navbar-nav {
+      margin-left: 50%;
     }
 
-    /* General navbar styles */
+    .navbar .navbar-toggler {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: none; /* Hide the "Happy Shopping" text */
+    }
+
+    .navbar .dropdown-menu {
+      background-color: #343a40;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
     .cart-btn {
       font-size: 20px;
+      color: white;
       display: flex;
       align-items: center;
     }
 
     #cart-count {
       margin-left: 5px;
+      background-color: #ffc107;
+      border-radius: 50%;
+      padding: 2px 8px;
+      font-size: 14px;
     }
 
-    .product-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
+    /* Mobile navbar adjustments */
+    @media (max-width: 768px) {
+      .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
-    .product {
-      border: 1px solid #ddd;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Cart Modal Styling */
+    .modal-content {
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
     }
 
-    .product img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
+    .modal-header, .modal-footer {
+      border: none;
     }
 
-    .product button {
-      margin-top: 10px;
-      background-color: #5c6bc0;
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    .cart-item button {
+      background: #dc3545;
       color: white;
       border: none;
-      padding: 10px;
+      padding: 5px 10px;
       border-radius: 5px;
     }
 
-    .product button:hover {
-      background-color: #3f51b5;
+    .cart-item button:hover {
+      background-color: #c82333;
+    }
+
+    .clear-cart {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .clear-cart:hover {
+      background-color: #0056b3;
+    }
+
+    /* Adjust the layout of the navbar */
+    .navbar .container-fluid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .search-bar-container {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    .search-bar-container form {
+      width: 100%;
+    }
+
+    /* Move the cart icon to the right */
+    .navbar .cart {
+      margin-left: auto;
     }
   </style>
 </head>
@@ -104,18 +139,27 @@
     <div class="header-content">
       <h1 class="h1">HyperTech Mart</h1>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 5px;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <!-- Navbar Brand and Toggler -->
-        <a class="navbar-brand" href="#">HyperTech Mart</a>
+        <!-- Remove Happy Shopping label -->
+        <a class="navbar-brand" href="#"></a>
+
+        <!-- Navbar Toggler -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <!-- Navbar Links -->
+         <div class="d-flex ms-auto search-bar-container">
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
+          
+        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
             </li>
@@ -126,20 +170,15 @@
               <a class="nav-link" href="admin_center.html">Admin Center</a>
             </li>
           </ul>
-        </div>
-
-        <!-- Search Bar and Cart -->
-        <div class="d-flex ms-auto">
-          <form class="d-flex me-3" role="search">
-            <input class="form-control me-2 search-bar" type="search" placeholder="Cari barang..." aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
           <div class="cart">
-            <a href="#" id="cart-btn" class="cart-btn">
+            <a href="#" id="cart-btn" class="cart-btn" data-bs-toggle="modal" data-bs-target="#cart-modal">
               <i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span>
             </a>
           </div>
         </div>
+
+        <!-- Search Bar and Cart -->
+        
       </div>
     </nav>
   </header>
@@ -148,70 +187,97 @@
     <h2>Produk Elektronik Terbaik</h2>
     <div class="product-container">
       <div class="product">
-        <img src="image/2.png" alt="Laptop Gaming">
+        <img src="image/2.png" alt="ROG Strix Laptop Gaming">
         <h3>ROG Strix Laptop Gaming</h3>
-        <p>Rp 15,000,000</p>
-        <button class="add-to-cart" data-name="Laptop Gaming" data-price="15000000">Masukkan ke Keranjang</button>
+        <p>Rp 15,999,000</p>
+        <button class="add-to-cart" data-name="ROG Strix Laptop Gaming" data-price="15999000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/1.png" alt="Smartphone">
+        <img src="image/1.png" alt="Iphone 16 Pro Max">
         <h3>Iphone 16 Pro Max</h3>
-        <p>Rp 19,500,000</p>
-        <button class="add-to-cart" data-name="Smartphone" data-price="7000000">Masukkan ke Keranjang</button>
+        <p>Rp 19,599,000</p>
+        <button class="add-to-cart" data-name="Iphone 16 Pro Max" data-price="19599000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/3.png" alt="Headphone">
-        <h3>Sony Wh1000Xm4 Headphone</h3>
-        <p>Rp 1,500,000</p>
-        <button class="add-to-cart" data-name="Headphone" data-price="1500000">Masukkan ke Keranjang</button>
+        <img src="image/3.png" alt="Sony Wh1000Xm4 Headphone">
+        <h3>Sony Wh1000X m4 Headphone</h3>
+        <p>Rp 1,599,000</p>
+        <button class="add-to-cart" data-name="Sony Wh1000X m4 Headphone" data-price="1599000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/4.png" alt="Smartwatch">
+        <img src="image/4.png" alt="Aolon Curve Smartwatch">
         <h3>Aolon Curve Smartwatch</h3>
-        <p>Rp 2,000,000</p>
-        <button class="add-to-cart" data-name="Smartwatch" data-price="2000000">Masukkan ke Keranjang</button>
+        <p>Rp 2,999,000</p>
+        <button class="add-to-cart" data-name="Aolon Curve Smartwatch" data-price="2999000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/5.png" alt="Tablet">
+        <img src="image/5.png" alt="JBL Bluetooth Speaker">
         <h3>JBL Bluetooth Speaker</h3>
-        <p>Rp 500,000</p>
-        <button class="add-to-cart" data-name="Tablet" data-price="5000000">Masukkan ke Keranjang</button>
+        <p>Rp 599,000</p>
+        <button class="add-to-cart" data-name="JBL Bluetooth Speaker" data-price="599000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/6.png" alt="Kamera Digital">
+        <img src="image/6.png" alt="Nemesis Keyboard Gaming">
         <h3>Nemesis Keyboard Gaming</h3>
-        <p>Rp 900,000</p>
-        <button class="add-to-cart" data-name="Kamera Digital" data-price="8000000">Masukkan ke Keranjang</button>
+        <p>Rp 999,000</p>
+        <button class="add-to-cart" data-name="Nemesis Keyboard Gaming" data-price="999000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/7.png" alt="Speaker Bluetooth">
+        <img src="image/7.png" alt="Intel I9 PC Gaming">
         <h3>Intel I9 PC Gaming</h3>
-        <p>Rp 20,000,000</p>
-        <button class="add-to-cart" data-name="Speaker Bluetooth" data-price="1000000">Masukkan ke Keranjang</button>
+        <p>Rp 20,599,000</p>
+        <button class="add-to-cart" data-name="Intel I9 PC Gaming" data-price="20599000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/8.png" alt="Drone">
+        <img src="image/8.png" alt="Rexus Aviator Mouse">
         <h3>Rexus Aviator Mouse</h3>
-        <p>Rp 220,000</p>
-        <button class="add-to-cart" data-name="Drone" data-price="12000000">Masukkan ke Keranjang</button>
+        <p>Rp 299,000</p>
+        <button class="add-to-cart" data-name="Rexus Aviator Mouse" data-price="299000">Masukkan ke Keranjang</button>
       </div>
       <div class="product">
-        <img src="image/9.png" alt="Monitor">
-        <h3>MSI G24i 24" Monitor </h3>
+        <img src="image/9.png" alt="MSI G24i 24inch Monitor">
+        <h3>MSI G24i 24inch Monitor</h3>
         <p>Rp 3,500,000</p>
-        <button class="add-to-cart" data-name="Monitor" data-price="3500000">Masukan ke Keranjang</button>
+        <button class="add-to-cart" data-name="MSI G24i 24inch Monitor" data-price="3500000">Masukan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/10.jpg" alt="AirPods Pro Gen-2">
+        <h3>AirPods Pro Gen-2</h3>
+        <p>Rp 2.499.000</p>
+        <button class="add-to-cart" data-name="AirPods Pro Gen-2" data-price="2499000">Masukan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/11.jpg" alt="GT390 CPU Air COOLER FAN">
+        <h3>GT390 CPU Air COOLER FAN</h3>
+        <p>Rp 500,000</p>
+        <button class="add-to-cart" data-name="GT390 CPU Air COOLER FAN" data-price="500000">Masukan ke Keranjang</button>
+      </div>
+      <div class="product">
+        <img src="image/12.jpg" alt="Printer Canon Ip2770">
+        <h3>Printer Canon Ip2770</h3>
+        <p>Rp 1.200.000</p>
+        <button class="add-to-cart" data-name="Printer Canon Ip2770" data-price="1200000">Masukan ke Keranjang</button>
       </div>
     </div>
   </main>
 
   <!-- Cart Modal -->
-  <div id="cart-modal" class="modal">
-    <div class="modal-content">
-      <span id="close-modal" class="close">&times;</span>
-      <h2>Keranjang Belanja</h2>
-      <ul id="cart-items"></ul>
-      <p>Total Barang: <span id="total-items">0</span></p>
-      <button id="clear-cart" class="clear-cart">Batalkan Semua Pesanan</button>
+  <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cart-modal-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cart-modal-label">Keranjang Belanja</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul id="cart-items"></ul>
+          <p>Total Barang: <span id="total-items">0</span></p>
+        </div>
+        <div class="modal-footer">
+          <button id="clear-cart" class="clear-cart btn btn-danger">Batalkan Semua Pesanan</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        </div>
+      </div>
     </div>
   </div>
 
