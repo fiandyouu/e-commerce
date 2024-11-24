@@ -17,38 +17,10 @@
     href="https://fonts.googleapis.com/css2?family=Abel&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap"
     rel="stylesheet">
   <style>
-    /* Additional custom styles for mobile responsiveness */
+    /* Custom styling for search bar and cart button */
     @media (max-width: 768px) {
-      .product-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
-        gap: 1rem;
-      }
-
-      .product {
-        padding: 10px;
-        text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-
-      .product img {
-        width: 100%;
-        height: auto;
-        max-height: 200px;
-        object-fit: cover;
-      }
-
-      .navbar {
-        padding: 10px;
-      }
-
       .navbar-nav {
-        text-align: center;
-      }
-
-      .navbar-nav .nav-item {
-        padding: 0.5rem;
+        flex-direction: column;
       }
 
       .search-bar {
@@ -56,25 +28,73 @@
         margin: 10px 0;
       }
 
+      .navbar-toggler {
+        margin-right: 10px;
+      }
+
+      .cart {
+        margin-left: 15px;
+      }
+
+      .navbar-collapse {
+        margin-top: 10px;
+      }
+
       .cart-btn {
-        font-size: 20px;
+        font-size: 18px;
+        margin-left: 10px;
+      }
+
+      .navbar .search-bar, .navbar .cart-btn {
+        display: inline-block;
+      }
+
+      .cart {
+        margin-left: 20px;
       }
     }
 
-    /* Adjust the heading for small screens */
-    h2 {
-      font-size: 1.5rem;
-      text-align: center;
+    /* General navbar styles */
+    .cart-btn {
+      font-size: 20px;
+      display: flex;
+      align-items: center;
     }
 
-    h3 {
-      font-size: 1rem;
-      text-align: center;
+    #cart-count {
+      margin-left: 5px;
     }
 
-    .footer p {
-      text-align: center;
-      font-size: 0.75rem; /* Smaller font size */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .product {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .product button {
+      margin-top: 10px;
+      background-color: #5c6bc0;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .product button:hover {
+      background-color: #3f51b5;
     }
   </style>
 </head>
@@ -86,15 +106,15 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 5px;">
       <div class="container-fluid">
+        <!-- Navbar Brand and Toggler -->
+        <a class="navbar-brand" href="#">HyperTech Mart</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+
+        <!-- Navbar Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
-          <form class="d-flex ms-auto search-bar" role="search">
-            <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form>
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
@@ -106,12 +126,18 @@
               <a class="nav-link" href="admin_center.html">Admin Center</a>
             </li>
           </ul>
+        </div>
+
+        <!-- Search Bar and Cart -->
+        <div class="d-flex ms-auto">
+          <form class="d-flex me-3" role="search">
+            <input class="form-control me-2 search-bar" type="search" placeholder="Cari barang..." aria-label="Search">
+            <button class="btn btn-outline-light" type="submit">Search</button>
+          </form>
           <div class="cart">
-            <div class="btn-group">
-              <a href="#" id="cart-btn" class="cart-btn">
-                <i class="fa-solid fa-cart-shopping"></i><span style="margin-left: 1px;" id="cart-count">0</span>
-              </a>
-            </div>
+            <a href="#" id="cart-btn" class="cart-btn">
+              <i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span>
+            </a>
           </div>
         </div>
       </div>
