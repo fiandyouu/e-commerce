@@ -12,65 +12,80 @@
     integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Additional custom styles for mobile responsiveness */
+    /* Navbar Styling */
+    .navbar-nav {
+      margin-left: auto;
+    }
+
+    .navbar-nav .nav-link {
+      color: white !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    /* Dashboard Styling */
+    main {
+      margin: 20px;
+    }
+
+    .dashboard-card {
+      background-color: #343a40;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .dashboard-card:hover {
+      transform: scale(1.05);
+    }
+
+    .dashboard-card i {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Mobile Responsiveness */
     @media (max-width: 768px) {
-      .navbar {
-        padding: 15px;
-      }
-
-      .navbar-nav {
-        text-align: center;
-      }
-
-      .navbar-nav .nav-item {
-        padding: 0.5rem;
-      }
-
-      .navbar-toggler {
-        border-color: white;
-      }
-
-      .card {
-        margin-bottom: 15px;
-      }
-
-      .container {
-        padding: 10px;
+      .dashboard-card {
+        margin-bottom: 20px;
       }
 
       footer p {
-        text-align: center;
-        font-size: 0.55rem;
+        font-size: 0.8rem;
       }
-    }
-
-    .card-body {
-      padding: 20px;
-    }
-
-    .card-title {
-      font-size: 1.2rem;
-    }
-
-    footer {
-      margin-top: 30px;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="header-content-about">
-      <h1 class="h1">Admin Center</h1>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="border-radius: 5px;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">HyperTech Mart</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -87,69 +102,51 @@
   </header>
 
   <main>
-    <div class="container mt-4">
-      <h2>Dashboard Admin</h2>
+    <div class="container">
+      <h2 class="text-center my-4">Admin Center</h2>
       <div class="row">
-        <div class="col-md-4 col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fa-solid fa-box fa-3x"></i>
-              <h5 class="card-title mt-2">Manage Products</h5>
-              <p class="card-text">Tambah, edit, atau hapus produk.</p>
-              <a href="manage-products.html" class="btn btn-primary">Kelola Produk</a>
-            </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <i class="fa-solid fa-box"></i>
+            <h5 class="mt-3">Kelola Produk</h5>
+            <a href="manage-products.html" class="btn btn-light mt-3">Kelola</a>
           </div>
         </div>
-        <div class="col-md-4 col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fa-solid fa-cart-shopping fa-3x"></i>
-              <h5 class="card-title mt-2">View Orders</h5>
-              <p class="card-text">Lihat dan kelola pesanan pelanggan.</p>
-              <a href="orders.html" class="btn btn-primary">Lihat Pesanan</a>
-            </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h5 class="mt-3">Kelola Pesanan</h5>
+            <a href="orders.html" class="btn btn-light mt-3">Kelola</a>
           </div>
         </div>
-        <div class="col-md-4 col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fa-solid fa-user-shield fa-3x"></i>
-              <h5 class="card-title mt-2">Manage Users</h5>
-              <p class="card-text">Kelola data pengguna.</p>
-              <a href="users.html" class="btn btn-primary">Kelola Pengguna</a>
-            </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <i class="fa-solid fa-user-shield"></i>
+            <h5 class="mt-3">Kelola Pengguna</h5>
+            <a href="users.html" class="btn btn-light mt-3">Kelola</a>
           </div>
         </div>
       </div>
       <div class="row mt-4">
-        <div class="col-md-4 col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fa-solid fa-chart-line fa-3x"></i>
-              <h5 class="card-title mt-2">View Analytics</h5>
-              <p class="card-text">Pantau performa situs.</p>
-              <a href="analytics.html" class="btn btn-primary">Lihat Analitik</a>
-            </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <i class="fa-solid fa-chart-line"></i>
+            <h5 class="mt-3">Lihat Analitik</h5>
+            <a href="analytics.html" class="btn btn-light mt-3">Lihat</a>
           </div>
         </div>
-        <div class="col-md-4 col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fa-solid fa-envelope fa-3x"></i>
-              <h5 class="card-title mt-2">Messages</h5>
-              <p class="card-text">Lihat pesan pelanggan.</p>
-              <a href="messages.html" class="btn btn-primary">Lihat Pesan</a>
-            </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <i class="fa-solid fa-envelope"></i>
+            <h5 class="mt-3">Pesan Masuk</h5>
+            <a href="messages.html" class="btn btn-light mt-3">Lihat</a>
           </div>
         </div>
-        <div class="col-md-4 col-12">
-          <div class="card text-center">
-            <div class="card-body">
-              <i class="fa-solid fa-cog fa-3x"></i>
-              <h5 class="card-title mt-2">Settings</h5>
-              <p class="card-text">Konfigurasi sistem.</p>
-              <a href="settings.html" class="btn btn-primary">Pengaturan</a>
-            </div>
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <i class="fa-solid fa-cog"></i>
+            <h5 class="mt-3">Pengaturan</h5>
+            <a href="settings.html" class="btn btn-light mt-3">Kelola</a>
           </div>
         </div>
       </div>
@@ -157,7 +154,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2024 E-Commerce Elektronik. All Rights Reserved.</p>
+    <p>&copy; 2024 HyperTech Mart. All Rights Reserved.</p>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
