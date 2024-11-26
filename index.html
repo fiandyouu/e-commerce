@@ -99,6 +99,10 @@
       .cart-btn {
         font-size: 1.2rem;
       }
+
+      .offcanvas-body {
+        padding: 1rem;
+      }
     }
 
     @media screen and (max-width: 390px) {
@@ -138,24 +142,19 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <!-- Navbar Toggler Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- Navbar Toggler Button (Mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Navbar Links and Search Form -->
-        <div class="d-flex flex-column w-100">
-          <!-- Search bar -->
-          <div class="search-bar-container">
-            <form class="d-flex w-100" role="search">
-              <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
-              <button class="btn btn-outline-light" type="submit">Search</button>
-            </form>
+        <!-- Offcanvas Menu for Mobile -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-
-          <!-- Navbar Menu Items -->
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="offcanvas-body">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
@@ -180,12 +179,22 @@
                 <a class="nav-link" href="admin_center.html">Admin Center</a>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <!-- Search bar and Cart icon (Outside Navbar for Mobile) -->
+        <div class="d-flex flex-column w-100">
+          <!-- Search bar -->
+          <div class="search-bar-container d-flex align-items-center">
+            <form class="d-flex w-100" role="search">
+              <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+
             <!-- Cart icon -->
-            <div class="cart">
-              <a href="#" id="cart-btn" class="cart-btn" data-bs-toggle="modal" data-bs-target="#cart-modal">
-                <i class="fa-solid fa-cart-shopping">:</i><span id="cart-count">0</span>
-              </a>
-            </div>
+            <a href="#" id="cart-btn" class="cart-btn ms-3" data-bs-toggle="modal" data-bs-target="#cart-modal">
+              <i class="fa-solid fa-cart-shopping"></i><span id="cart-count">0</span>
+            </a>
           </div>
         </div>
       </div>
