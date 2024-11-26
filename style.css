@@ -16,7 +16,7 @@ body {
 }
 
 .navbar-nav .nav-link {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 .navbar-nav .nav-link:hover {
@@ -34,7 +34,8 @@ body {
 
 /* Dropdown Menu Styling */
 .navbar-nav .nav-item .dropdown-menu {
-  display: none;
+  display: block;
+  color: #333;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -42,6 +43,7 @@ body {
 
 .navbar-nav .nav-item:hover .dropdown-menu {
   display: block;
+  color: #333;
   opacity: 1;
   visibility: visible;
 }
@@ -147,6 +149,8 @@ footer p {
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
+
+  
 }
 
 @media (max-width: 480px) {
@@ -323,7 +327,7 @@ h2 {
 .remove-item {
   background-color: #ff4d4d00;
   border: none;
-  color: rgba(255, 0, 0, 0.66);
+  color: rgb(255, 0, 0);
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 1px;
@@ -331,7 +335,7 @@ h2 {
 }
 
 .remove-item:hover {
-  color: rgb(255, 0, 0);
+  color: rgba(255, 0, 0, 0.502);
   background-color: #ffffff00;
 }
 
