@@ -11,6 +11,120 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
     integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4p889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* General Styles */
+.container h5,
+p {
+  text-align: center;
+}
+
+header {
+  margin-bottom: 9px;
+}
+
+footer {
+  margin-top: 30px;
+  /* Add space at the bottom of the page for the footer */
+}
+
+.card {
+  margin-bottom: 15px;
+  /* Space between cards */
+}
+
+.card-body {
+  padding: 15px;
+  /* Add padding to card body for better spacing */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row.mt-4 {
+  gap: 20px;
+  /* Add gap between columns (cards) */
+}
+
+/* Reduce gap between h2 and cards */
+.container h2 {
+  margin-bottom: 15px; /* Decrease margin */
+}
+
+/* Enhance box shadow for the about cards */
+.about-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Stronger box shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Optional: Make the shadow more intense on hover */
+.about-card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  /* Ensure cards have a gap between them on small screens */
+  .row.mt-5 {
+    gap: 20px;
+  }
+
+  footer {
+    margin-top: 30px;
+    /* Add space at the bottom of the page for the footer */
+  }
+
+  .card {
+    margin-bottom: 15px;
+    /* Space between cards */
+  }
+
+  .card-body {
+    padding: 15px;
+    /* Add padding to card body for better spacing */
+  }
+
+  .container h2 {
+    margin-bottom: 20px; /* Adjust spacing for the heading */
+  }
+
+  /* Adjust card size on smaller screens */
+  .col-md-4 {
+    flex: 1 1 100%; /* Allow cards to take full width */
+    max-width: 100%;
+  }
+
+  .container h5,
+  .container p {
+    text-align: center;
+  }
+
+  /* Reduce gap between h2 and cards */
+.container h2 {
+  margin-bottom: 15px; /* Decrease margin */
+}
+
+/* Enhance box shadow for the about cards */
+.about-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Stronger box shadow */
+  transition: box-shadow 0.3s ease;
+}
+
+/* Optional: Make the shadow more intense on hover */
+.about-card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+}
+  </style>
 </head>
 
 <body>
@@ -66,7 +180,7 @@
           </div>
         </div>
       </div>
-  
+
       <!-- New Team Section -->
       <div class="row mt-5">
         <h3 class="text-center mb-4">HyperTech Team</h3>
@@ -103,7 +217,7 @@
       </div>
     </div>
   </main>
-  
+
 
   <footer>
     <p>&copy; 2024 HyperTech Mart. All Rights Reserved.</p>
