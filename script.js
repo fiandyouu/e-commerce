@@ -22,7 +22,6 @@ document.querySelectorAll(".add-to-cart").forEach((button) => {
   });
 });
 
-
 cartBtn.addEventListener("click", () => {
   cartModal.style.display = "block";
   cartModal.style.transform = "translateX(0)";
@@ -45,43 +44,43 @@ function removeItemFromCart(index) {
   updateCart();
 }
 
-
 clearCartBtn.addEventListener("click", () => {
   cart = [];
   updateCart();
 });
 
-
 function updateCart() {
-
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-
+  const totalPrice = cart.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   cartCount.textContent = totalQuantity;
   totalItems.textContent = totalQuantity;
 
   cartItems.innerHTML = "";
 
-
   cart.forEach((item, index) => {
     const li = document.createElement("li");
     li.innerHTML = `
       <div class="item-info">
-        ${item.name} (x${item.quantity}) - Rp ${item.price.toLocaleString('id-ID')} / item
+        ${item.name} (x${item.quantity}) - Rp ${item.price.toLocaleString(
+      "id-ID"
+    )} / item
       </div>
       <button class="remove-item" data-index="${index}">&times;</button>
     `;
     cartItems.appendChild(li);
-
 
     li.querySelector(".remove-item").addEventListener("click", () => {
       removeItemFromCart(index);
     });
   });
 
-
   const totalPriceElement = document.createElement("p");
-  totalPriceElement.innerHTML = `Total Harga: <strong>Rp ${totalPrice.toLocaleString('id-ID')}</strong>`;
+  totalPriceElement.innerHTML = `Total Harga: <strong>Rp ${totalPrice.toLocaleString(
+    "id-ID"
+  )}</strong>`;
   cartItems.appendChild(totalPriceElement);
 }

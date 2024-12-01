@@ -1,5 +1,6 @@
 /* General Styles */
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Bungee+Shade&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Bungee+Shade&family=Nova+Round&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Silkscreen&display=swap");
+
 body {
   font-family: "Abel", sans-serif;
   font-weight: 400;
@@ -10,7 +11,6 @@ body {
   color: #333;
 }
 
-/* Navbar Styling */
 .navbar-nav {
   margin-left: auto;
 }
@@ -32,7 +32,6 @@ body {
   border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Dropdown Menu Styling */
 .navbar-nav .nav-item .dropdown-menu {
   display: block;
   color: #333;
@@ -63,7 +62,6 @@ body {
   font-size: 14px;
 }
 
-/* Footer Styling */
 footer {
   background-color: #343a40;
   color: white;
@@ -75,7 +73,6 @@ footer p {
   font-size: 0.8rem;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .navbar-nav {
     flex-direction: column;
@@ -149,8 +146,6 @@ footer p {
     padding: 0.4rem 0.8rem;
     font-size: 0.7rem;
   }
-
-  
 }
 
 @media (max-width: 480px) {
@@ -190,31 +185,31 @@ footer p {
     padding: 15px;
   }
 
-  .clear-cart, .remove-item {
+  .clear-cart,
+  .remove-item {
     padding: 0.3rem 0.6rem;
   }
 }
 
-/* Header Styling */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #273443;
   color: white;
-  padding: 1rem ;
+  padding: 1rem;
   border-radius: 0px 0px 5px 5px;
 }
 
 .header-content h1 {
-  font-family: 'Bungee Shade', sans-serif;
+  font-family: "Bungee Shade", sans-serif;
   text-align: center;
   font-size: 2rem;
   padding: 10px;
 }
 
 .header-content-about h1 {
-  font-family: 'poppins', sans-serif;
+  font-family: "poppins", sans-serif;
   text-align: left;
   font-size: 2rem;
   padding: 10px;
@@ -237,7 +232,6 @@ h2 {
   text-align: center;
 }
 
-/* Product Container Layout */
 .product-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -294,7 +288,6 @@ h2 {
   background-color: #0056b3;
 }
 
-/* Cart Modal Styling */
 .modal-body {
   padding: 20px;
 }
@@ -331,7 +324,7 @@ h2 {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 1px;
-  margin-left: 10px; /* Add space between the item and the remove button */
+  margin-left: 10px;
 }
 
 .remove-item:hover {
@@ -365,7 +358,6 @@ button.btn-close {
   font-size: 1.5rem;
 }
 
-/* Cart Button Styling */
 .cart-btn {
   display: inline-flex;
   align-items: center;
@@ -389,20 +381,20 @@ button.btn-close {
   background-color: #ffffffac;
 }
 
-/* About and Dashboard Card Styling */
-.about-card, .dashboard-card {
+.about-card,
+.dashboard-card {
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-card p, .dashboard-card p {
+.about-card p,
+.dashboard-card p {
   font-size: 1.1rem;
   color: #555;
 }
 
-/* Floating Link Button */
 .floating-link {
   position: fixed;
   bottom: 20px;
