@@ -27,7 +27,6 @@ cartBtn.addEventListener("click", () => {
   cartModal.style.transform = "translateX(0)";
 });
 
-// Close cart modal
 document.querySelector(".btn-close").addEventListener("click", () => {
   cartModal.style.transform = "translateX(100%)";
   setTimeout(() => {
@@ -35,7 +34,6 @@ document.querySelector(".btn-close").addEventListener("click", () => {
   }, 300);
 });
 
-// Remove item from cart
 function removeItemFromCart(index) {
   cart[index].quantity -= 1;
   if (cart[index].quantity <= 0) {
